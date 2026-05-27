@@ -16,4 +16,6 @@ Cypress.Commands.add("login", () => {
   );
 
   cy.contains("Login").click();
+
+  cy.url().should("include", "/panel/garage");
 });
