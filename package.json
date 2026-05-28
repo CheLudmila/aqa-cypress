@@ -3,10 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "commonjs",
   "scripts": {
-  "cy:open": "cypress open",
-  "cy:run": "cypress run"
-},
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+
+    "test:qauto": "cypress run --env configFile=qauto",
+    "test:qauto2": "cypress run --env configFile=qauto2",
+
+    "open:qauto": "cypress open --env configFile=qauto",
+    "open:qauto2": "cypress open --env configFile=qauto2"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/CheLudmila/aqa-cypress.git"
@@ -14,12 +21,14 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/CheLudmila/aqa-cypress/issues"
   },
   "homepage": "https://github.com/CheLudmila/aqa-cypress#readme",
   "devDependencies": {
-    "cypress": "^15.14.2"
+    "cypress": "^15.14.2",
+    "mochawesome": "^7.1.4",
+    "mochawesome-merge": "^5.1.1",
+    "mochawesome-report-generator": "^6.3.2"
   }
 }
