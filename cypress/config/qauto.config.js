@@ -1,5 +1,5 @@
 module.exports = {
   baseUrl: "https://qauto.forstudy.space/",
   email: "Genbroker@gmail.com",
-  password: "Pass1982"
+  password: "Pass1982",
 };

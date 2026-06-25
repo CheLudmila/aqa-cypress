@@ -19,3 +19,18 @@ Cypress.Commands.add("login", () => {
 
   cy.url().should("include", "/panel/garage");
 });
+
+Cypress.Commands.add("createExpense", (carId) => {
+  return cy.request({
+    method: "POST",
+    url: "/api/expenses",
+    body: {
+      carId,
+      reportedAt: "2026-05-28",
+      mileage: 120,
+      liters: 20,
+      totalCost: 1000,
+      forceMileage: false,
+    },
+  });
+});
