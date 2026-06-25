@@ -20,4 +20,4 @@ jobs:
         run: npm ci
 
       - name: Run Cypress tests
-        run: npx cypress run --browser chrome --spec "cypress/e2e/garage/addCar.cy.js"
+        run: npm run test:qauto -- --spec "cypress/e2e/1-getting-started/todo.cy.js"

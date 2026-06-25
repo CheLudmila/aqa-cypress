@@ -6,18 +6,22 @@ class GaragePage {
   }
 
   addCar(brand, model, mileage) {
-    this.openAddCarModal();
+  this.openAddCarModal();
 
-    cy.get("#addCarBrand").select(brand);
+  cy.get("#addCarBrand").select(brand);
+  cy.get("#addCarModel").select(model);
+  cy.get("#addCarMileage").clear().type(mileage);
 
-    cy.get("#addCarModel").select(model);
+  cy.get(".modal-content")
+    .contains("button", "Add")
+    .click();
 
-    cy.get("#addCarMileage").clear().type(mileage);
+  // Чекаємо, поки модальне вікно закриється
+  cy.get("ngb-modal-window").should("not.exist");
 
-    cy.get(".modal-content")
-      .contains("button", "Add")
-      .click();
-  }
+  // І перевіряємо, що кнопка Add car знову доступна
+  cy.contains("button", "Add car").should("be.visible");
+}
 
   verifyCarAdded(carName) {
     cy.contains(carName).should("be.visible");
